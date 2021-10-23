@@ -1,0 +1,71 @@
+<div id=div>
+  <div id=down>Ты даун?</div>
+  <div>
+    <button class=btn id=yes onclick="handleYes()">Да</button>
+    <button class=btn id=no onclick="handleNo()">Нет</button>
+  </div>
+</div>
+
+<style>
+body {
+background: black;
+color: white;
+margin: 0;
+}
+
+#down {
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+
+#div {
+display: flex;
+flex-direction: column;
+
+align-items: center;
+justify-content: center;
+width: 100vw;
+height: 100vh;
+transition: 2s;
+}
+
+.btn {
+background: black;
+color: white;
+padding: 10px 15px;
+border: 2px solid white;
+}
+
+.btn:hover {
+border-color: white;
+}
+
+#no {
+position: relative;
+top: 0;
+left: 0;
+transition: left 0.5s, top 0.5s;
+}
+
+#yes:focus {
+  background: white;
+  color: black;
+}
+</style>
+
+<script>
+function handleYes() {
+  text = document.getElementById('down')
+  text.innerHTML = 'Я знал ))))'
+  
+  btn_no = document.getElementById('no')
+  btn_no.style.display = 'none'
+  btn_yes = document.getElementById('yes')
+  btn_yes.style.display = 'none'
+}
+function handleNo() {
+  btn_no = document.getElementById('no')
+  btn_no.style.left = Math.random() * (650 + 650) - 650 + 'px'
+  btn_no.style.top = Math.random() * (300 + 300) - 350 + 'px'
+}
+</script>
