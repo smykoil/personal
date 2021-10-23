@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div id=div>
   <div id=down>Ты даун?</div>
   <div>
@@ -65,7 +67,10 @@ function handleYes() {
 }
 function handleNo() {
   btn_no = document.getElementById('no')
-  btn_no.style.left = Math.random() * (650 + 650) - 650 + 'px'
-  btn_no.style.top = Math.random() * (300 + 300) - 350 + 'px'
+
+  let w = (document.documentElement.clientWidth / 2) - 40
+  let h = (document.documentElement.clientHeight / 2) - 30
+  btn_no.style.left = Math.random() * (w * 2) - w + 'px'
+  btn_no.style.top = Math.random() * (h * 2) - h + 'px'
 }
 </script>
